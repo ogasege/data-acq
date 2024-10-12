@@ -55,9 +55,12 @@ jobs:
           source venv/bin/activate
           pip install -r requirements.txt
 
+      # Setting PYTHONPATH to point to the modules directory
       - name: Set PYTHONPATH
-        run: echo "PYTHONPATH=$PWD/modules" >> $GITHUB_ENV
-  
+        run: |
+          source venv/bin/activate
+          export PYTHONPATH=$PYTHONPATH:$PWD/modules
+          pytest --maxfail=1 --disable-warnings
 
       - name: Run Pytest
         run: |
