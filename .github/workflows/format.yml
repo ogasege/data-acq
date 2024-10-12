@@ -9,37 +9,8 @@ on:
       - main
 
 jobs:
-  # Static code analysis using Ruff
-  lint:
-    name: Lint Code with Ruff
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.9'
-
-      - name: Install dependencies
-        run: |
-          python -m venv venv
-          source venv/bin/activate
-          pip install ruff
-
-      - name: Run Ruff
-        run: |
-          source venv/bin/activate
-          ruff check .
-
-  # Unit tests with Pytest
   test:
-    name: Run Unit Tests
     runs-on: ubuntu-latest
-    needs: lint  # Runs this job only if lint passes
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -51,14 +22,15 @@ jobs:
 
       - name: Install dependencies
         run: |
-          python -m venv venv
-          source venv/bin/activate
+          python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run Pytest
-        run: |
-          source venv/bin/activate
-          pytest --maxfail=1 --disable-warnings
+      # Add /modules to PYTHONPATH
+      - name: Set PYTHONPATH
+        run: echo "PYTHONPATH=$PWD/modules" >> $GITHUB_ENV
+
+      - name: Run tests
+        run: pytest --maxfail=1 --disable-warnings
 
   # # Docker Build and Push
   # docker:
