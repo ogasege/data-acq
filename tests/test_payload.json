@@ -1,0 +1,124 @@
+{
+    "time": "2024-10-10T16:03:00+00:00",
+    "data": {
+        "strato-1": {
+            "cpu_load": 0.08740234375,
+            "boot_time": 1702379385.0,
+            "memory_usage": 27.4,
+            "cpu_temp": 64.99,
+            "disk_usage": 63.8
+        },
+        "power-meter": {
+            "grid_status": 1,
+            "genset_status": 0,
+            "I_L1": 205.60000000000002,
+            "I_L2": 200.70000000000002,
+            "I_L3": 212.10000000000002,
+            "freq": 50.29,
+            "P_total": 136400,
+            "E_exported": 1531708000
+        },
+        "pv-inverter-1": {
+            "PF": 0,
+            "I_L1": 245,
+            "I_L2": 246,
+            "I_L3": 245,
+            "V_L1": 0,
+            "V_L2": 0,
+            "V_L3": 0,
+            "freq": 502.0,
+            "P_total": 16100,
+            "Q_total": 1800,
+            "S_total": 16700,
+            "dc_in_P1": 0,
+            "dc_in_V1": 0,
+            "total_yield": 51159000
+        },
+        "pv-inverter-2": {
+            "PF": 0,
+            "I_L1": 292,
+            "I_L2": 292,
+            "I_L3": 292,
+            "V_L1": 0,
+            "V_L2": 0,
+            "V_L3": 0,
+            "freq": 502.0,
+            "P_total": 20000,
+            "Q_total": 2100,
+            "S_total": 20000,
+            "dc_in_P1": 0,
+            "dc_in_V1": 0,
+            "total_yield": 52518000
+        },
+        "pv-inverter-3": {
+            "PF": 0,
+            "I_L1": 254,
+            "I_L2": 254,
+            "I_L3": 253,
+            "V_L1": 0,
+            "V_L2": 0,
+            "V_L3": 0,
+            "freq": 502.0,
+            "P_total": 17300,
+            "Q_total": 1700,
+            "S_total": 17400,
+            "dc_in_P1": 0,
+            "dc_in_V1": 0,
+            "total_yield": 50824000
+        },
+        "pv-inverter-4": {
+            "PF": 0,
+            "I_L1": 239,
+            "I_L2": 239,
+            "I_L3": 239,
+            "V_L1": 0,
+            "V_L2": 0,
+            "V_L3": 0,
+            "freq": 502.0,
+            "P_total": 16300,
+            "Q_total": 1600,
+            "S_total": 16400,
+            "dc_in_P1": 0,
+            "dc_in_V1": 0,
+            "total_yield": 54667000
+        },
+        "pv-inverter-5": {
+            "PF": 0,
+            "I_L1": 237,
+            "I_L2": 237,
+            "I_L3": 236,
+            "V_L1": 0,
+            "V_L2": 0,
+            "V_L3": 0,
+            "freq": 502.0,
+            "P_total": 16100,
+            "Q_total": 1500,
+            "S_total": 16200,
+            "dc_in_P1": 0,
+            "dc_in_V1": 0,
+            "total_yield": 52885000
+        },
+        "pv-inverter-6": {
+            "PF": 0,
+            "I_L1": 241,
+            "I_L2": 241,
+            "I_L3": 241,
+            "V_L1": 0,
+            "V_L2": 0,
+            "V_L3": 0,
+            "freq": 502.0,
+            "P_total": 15900,
+            "Q_total": 1500,
+            "S_total": 16400,
+            "dc_in_P1": 0,
+            "dc_in_V1": 0,
+            "total_yield": 51968000
+        },
+        "schneider-controller": {
+            "pvinv_P_total": 101700.0,
+            "pvinv_total_yield": 314021000.0
+        }
+    }
+}
+
+
