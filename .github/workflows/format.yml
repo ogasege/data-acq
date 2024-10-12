@@ -32,7 +32,7 @@ jobs:
       - name: Run Ruff
         run: |
           source venv/bin/activate
-          ruff check --fix --line-length 120 -- --quote-style single --indent-style tab --docstring-code-format true .
+          ruff check --fix
 
   # Unit tests with Pytest
   test:
