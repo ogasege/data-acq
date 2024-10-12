@@ -5,7 +5,7 @@ from datetime import datetime, timezone
 def process_payload(payload):
     """Processes the raw payload and restructures it."""
     try:
-        # Check if the payload is a string and convert it to a dictionary if necessary
+        print ("hello world") # Check if the payload is a string and convert it to a dictionary if necessary
         if isinstance(payload, str):
             raw_data = json.loads(payload)
         elif isinstance(payload, dict):
@@ -46,3 +46,4 @@ def process_payload(payload):
     except ValueError as ve:
         logging.error(f"Invalid payload type: {ve}")
         return None
+    

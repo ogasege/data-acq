@@ -31,3 +31,4 @@ def test_mqtt_client_subscription(config):
     client.client = mqtt_mock
     client.on_connect(client.client, None, None, 0)
     mqtt_mock.subscribe.assert_called_with('test/topic')
+    

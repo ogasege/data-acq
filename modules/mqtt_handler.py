@@ -48,3 +48,4 @@ class MQTTClient:
             self.client.loop_forever()
         except Exception as e:
             logging.error(f"Could not connect to broker: {e}")
+            

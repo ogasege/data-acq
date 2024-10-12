@@ -21,3 +21,4 @@ def download_ca_cert():
         except requests.RequestException as e:
             logging.error(f"Failed to download CA certificate: {e}")
             raise  # Re-raise the exception to handle it upstream if needed
+        

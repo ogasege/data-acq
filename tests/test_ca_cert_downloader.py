@@ -36,3 +36,4 @@ def test_download_ca_cert_failure(mock_get, mock_exists):
     with pytest.raises(Exception):
         download_ca_cert()
     mock_get.assert_called_once()
+    
