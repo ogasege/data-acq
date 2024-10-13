@@ -1,0 +1,1 @@
+![ECS Fargate Deployment Architecture](diagram-export-10-14-2024-12_28_35-AM.png)
