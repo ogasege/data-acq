@@ -27,6 +27,7 @@ class MQTTClient:
             self.client.subscribe(self.config['topic'])
         else:
             logging.error(f"Connection failed with code {rc}")
+            raise ConnectionError(f"Connection failed with code {rc}")
 
     # Callback for receiving a message
     def on_message(self, client, userdata, msg):
