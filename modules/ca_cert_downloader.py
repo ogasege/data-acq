@@ -3,7 +3,7 @@ import requests
 import logging
 
 # URL to the CA certificate
-CA_CERT_URL = 'https://github.com/ammpio/ammp-edge/raw/main/resources/certs/ca-stage.crt'
+CA_CERT_URL = os.getenv('CA_CERT_URL')
 CA_CERT_FILE = 'ca-stage.crt'
 
 def download_ca_cert():
