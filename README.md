@@ -3,7 +3,7 @@
 ## Overview
 This project is a Python-based data acquisition pipeline designed to handle renewable energy system data from an MQTT broker. The pipeline uses AWS services, including ECS and SQS, to ingest and process payloads, ensuring scalable and reliable data processing.
 
-The architecture and deployment diagram can be found in the `ECS-deployment-architecture.png`
+The architecture and deployment diagram can be found in the `![ECS-deployment-architecture.png](https://github.com/ogasege/data-acq/blob/b14b5e2658cc04e76138b2f46f52fd4fbc251fcd/architecture-images/ECS-deployment-architecture.png)`
 
 ## Project Structure
 ```
