@@ -64,7 +64,7 @@ jobs:
       # Export the CA_CERT_URL from GitHub Secrets
       - name: Set CA certificate URL
         run: | 
-          export CA_CERT_URL="${{ secrets.CA_CERT_URL }}"
+          echo "CA_CERT_URL=${{ secrets.CA_CERT_URL }}" >> $GITHUB_ENV
 
       # Run Pytest
       - name: Run Pytest
