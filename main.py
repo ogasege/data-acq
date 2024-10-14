@@ -17,6 +17,7 @@ MQTT_CONFIG = {
     'username': os.getenv('MQTT_USERNAME'),
     'password': os.getenv('MQTT_PASSWORD'),
     'topic': os.getenv('MQTT_TOPIC'),
+    'ca_cert_url': os.getenv('CA_CERT_URL'),
     'ca_cert_file': 'ca-stage.crt'  
 }
 
