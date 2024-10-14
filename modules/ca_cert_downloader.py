@@ -8,7 +8,6 @@ ca_cert_file = 'ca-stage.crt'
 
 def download_ca_cert():
     """Check if the CA cert file exists; if not, download it."""
-    print ('CA_CERT_URL=', ca_cert_url)
     if os.path.exists(ca_cert_file):
         logging.info(f"CA certificate already exists: {ca_cert_file}")
     else:
