@@ -84,6 +84,11 @@ python main.py
 ```
 This will connect to the MQTT broker and start processing messages as defined in the `modules/mqtt_handler.py`.
 
+You can run a container from the built docker image locally by executing:
+```bash
+docker run --env-file .env -it --rm data-acq:latest
+```
+
 ### On AWS ECS
 Deploy the infrastructure using the provided CloudFormation template:
 

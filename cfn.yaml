@@ -23,6 +23,7 @@ Parameters:
   DockerImage:
     Type: String
     Description: The Docker image to deploy (e.g., <account-id>.dkr.ecr.<region>.amazonaws.com/repo-name:tag).
+    Default: ${{ secrets.DOCKER_USERNAME }}/data-acq:latest
 
 Resources:
   # Create the ECS Cluster
