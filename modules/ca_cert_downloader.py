@@ -4,7 +4,7 @@ import logging
 
 # URL to the CA certificate
 ca_cert_url = os.getenv('CA_CERT_URL')
-ca_cert_file = 'CA_CERT_FILE'
+ca_cert_file = 'ca-stage.crt'
 
 def download_ca_cert():
     """Check if the CA cert file exists; if not, download it."""
