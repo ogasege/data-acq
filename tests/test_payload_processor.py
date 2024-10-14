@@ -1,6 +1,3 @@
-import pytest
-import json
-import os
 from modules.payload_processor import process_payload
 
 def test_process_payload_structure(raw_payload):
