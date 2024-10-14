@@ -65,7 +65,7 @@ jobs:
       - name: Set CA certificate URL
         run: | 
           echo "CA_CERT_URL=${{ secrets.CA_CERT_URL }}" >> $GITHUB_ENV
-
+          print (CA_CERT_URL)
       # Run Pytest
       - name: Run Pytest
         run: |
