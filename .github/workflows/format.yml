@@ -62,8 +62,9 @@ jobs:
           export PYTHONPATH=$PYTHONPATH:$PWD/modules
 
       # Export the CA_CERT_URL from GitHub Secrets
-      - name: Set CA_CERT_URL Environment Variable
-        run: echo "CA_CERT_URL=${{ secrets.CA_CERT_URL }}" >> $GITHUB_ENV
+      - name: Set CA certificate URL
+        run: |
+        export CA_CERT_URL=${{ secrets.CA_CERT_URL }}
 
       # Run Pytest
       - name: Run Pytest
