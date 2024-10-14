@@ -116,6 +116,4 @@ pytest
 - **SSL/TLS:** Secure communication with the MQTT broker using CA certificates.
 - **IAM Policies:** Ensure that the IAM roles used by the ECS tasks have the correct permissions for secure communication with AWS resources.
 
-## License
-This project is licensed under the MIT License.
-```
+
