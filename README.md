@@ -89,10 +89,10 @@ Deploy the infrastructure using the provided CloudFormation template:
 
 1. **Deploy the CloudFormation stack:**
    ```bash
-   aws cloudformation deploy --template-file cfn.yaml --stack-name mqtt-data-pipeline
+   aws cloudformation deploy --template-file cfn.yaml --stack-name mqtt-data-acq
    ```
 
-2. **Push the Docker image to AWS ECR** and update the ECS task definition.
+2. **Push the Docker image to Docker Hub** and update the ECS task definition.
 
 ## Key Modules
 
@@ -111,11 +111,6 @@ pytest
 - **SSL/TLS:** Secure communication with the MQTT broker using CA certificates.
 - **IAM Policies:** Ensure that the IAM roles used by the ECS tasks have the correct permissions for secure communication with AWS resources.
 
-## Contribution
-Feel free to fork this project, create a new branch, and submit pull requests. Any contributions are welcome!
-
 ## License
 This project is licensed under the MIT License.
 ```
-
-Let me know if you'd like to make any further changes!
