@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: '2010-09-09'
-Description: CloudFormation template to deploy Docker image to ECS using Fargate.
+Description: CloudFormation template to deploy Docker image to ECS using Fargate and AWS Secrets Manager.
 
 Parameters:
   VPC:
@@ -20,19 +20,19 @@ Parameters:
     Description: Number of tasks that should run in the ECS service.
     Default: 1
 
-  DockerImage:
+  DockerSecret:
     Type: String
-    Description: The Docker image to deploy (e.g., <account-id>.dkr.ecr.<region>.amazonaws.com/repo-name:tag).
-    Default: ${{ secrets.DOCKER_USERNAME }}/data-acq:latest
+    Description: The name of the Secrets Manager secret containing the Docker image URI.
+    Default: DockerSecret
 
 Resources:
   # Create the ECS Cluster
   ECSCluster:
     Type: AWS::ECS::Cluster
     Properties:
-      ClusterName: my-ecs-cluster
+      ClusterName: data-acq-cluster
 
-  # Create Task Execution Role (for pulling images, logging, etc.)
+  # Create Task Execution Role 
   ECSTaskExecutionRole:
     Type: AWS::IAM::Role
     Properties:
@@ -70,7 +70,7 @@ Resources:
   ECSTaskDefinition:
     Type: AWS::ECS::TaskDefinition
     Properties:
-      Family: my-task-definition
+      Family: data-acq-task-definition
       RequiresCompatibilities:
         - FARGATE
       Cpu: '256'
@@ -78,15 +78,15 @@ Resources:
       NetworkMode: awsvpc
       ExecutionRoleArn: !GetAtt ECSTaskExecutionRole.Arn
       ContainerDefinitions:
-        - Name: my-container
-          Image: !Ref DockerImage
+        - Name: data-acq-container
+          Image: !Sub '{{resolve:secretsmanager:${DockerSecret}:SecretString:username}}/data-acq:latest'
           Essential: true
           PortMappings:
             - ContainerPort: !Ref ContainerPort
           LogConfiguration:
             LogDriver: awslogs
             Options:
-              awslogs-group: /ecs/my-service
+              awslogs-group: /ecs/data-acq-service
               awslogs-region: !Ref AWS::Region
               awslogs-stream-prefix: ecs
 
@@ -117,7 +117,7 @@ Resources:
           SecurityGroups:
             - !Ref ECSSecurityGroup
       LoadBalancers: []
-      ServiceName: my-service
+      ServiceName: data-acq-service
       HealthCheckGracePeriodSeconds: 60
 
 Outputs:

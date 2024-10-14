@@ -2,16 +2,6 @@ import pytest
 from unittest.mock import patch, MagicMock
 from modules.mqtt_handler import MQTTClient
 
-@pytest.fixture
-def config():
-    return {
-        'broker': 'test.mosquitto.org',
-        'port': 1883,
-        'username': 'user',
-        'password': 'pass',
-        'topic': 'test/topic',
-        'ca_cert_file': 'ca-stage.crt'
-    }
 
 def test_mqtt_client_init(mock_cert, config):
     client = MQTTClient(config)
